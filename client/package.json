@@ -20,5 +20,5 @@
     "eject": "react-scripts eject",
     "heroku-postbuild": "cd client && yarn && yarn run build"
   },
-  "proxy": "https://react-redux-jwt.herokuapp.com/"
+  "proxy": "http://localhost:3001"
 }
