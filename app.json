@@ -1,21 +1,17 @@
 {
-  "name": "mern-jwt",
+  "name": "react-redux-jwt",
     "scripts": {
       "dokku": {
-        // "postdeploy": "npm run seed"
+        // "postdeploy": "npm run something"
       },
       "heroku": {
-        // "postdeploy": "npm run seed"
+        // "postdeploy": "npm run something"
       }     
     },
     "env": {
     "APP_SECRET": {
       "description": "secret",
       "value": "0shD10NQ6Jqg0OTN2WwwXz0ejw"
-    },
-    "MONGODB_URI": {
-      "description": "mongodb",
-      "value": "mongodb://heroku_mttknhd9:e8rf9c30ag2mlh2t05agei1p3a@ds133202.mlab.com:33202/heroku_mttknhd9"
     }
   },
   "formation": {
