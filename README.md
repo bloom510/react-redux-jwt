@@ -1,1 +1,1 @@
-# react-redux-jwt
+# react-redux-comments
