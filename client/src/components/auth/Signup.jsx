@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../../actions'
+import { compose } from 'redux';
 import { reduxForm, Field } from 'redux-form';
 
 class Signup extends Component {
     onSubmit = (formProps) => {
-        console.log(formProps)
-    }
+        this.props.signup(formProps, () => {
+            this.props.history.push('/feature');
+        });
+    };
     render() {
         const { handleSubmit } = this.props;
         return (
@@ -27,10 +32,20 @@ class Signup extends Component {
                      autoComplete='none'
                     />
                 </fieldset>
+                <div>
+                    {this.props.errorMessage}
+                </div>
                 <button>Sign Up!</button>
             </form>
         )
     }
 }
 
-export default reduxForm({ form: 'signup' })(Signup);
+function mapStateToProps(state) {
+    return { errorMessage: state.authReducer.errorMessage };
+}
+
+export default compose(
+    connect(mapStateToProps, actions),
+    reduxForm({ form: 'signup' })
+)(Signup)
