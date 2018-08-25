@@ -7,7 +7,7 @@ const router = require('./router');
 const mongoose = require('mongoose')
 const cors = require('cors');
 //DB setup
-mongoose.connect( process.env.MONGODB_URI || 'mongodb://localhost:auth/auth', { useNewUrlParser: true })
+mongoose.connect('mongodb://localhost:auth/auth', { useNewUrlParser: true })
 
 //App setup
 app.use(morgan('combined'));
