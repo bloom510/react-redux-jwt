@@ -6,10 +6,12 @@ const app = express();
 const router = require('./router');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const path = require('path');
 //DB setup
 mongoose.connect( process.env.MONGODB_URI || 'mongodb://localhost:auth/auth', { useNewUrlParser: true })
 
 //App setup
+app.use(express.static(path.join(__dirname, 'client/build')));
 app.use(morgan('combined'));
 app.use(cors());
 app.use(bodyParser.json({ type: '*/*'}));
