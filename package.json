@@ -34,6 +34,7 @@
   },
   "scripts": {
     "setup": "npm install && cd client && npm install",
+    "build": "node internals/scripts/build.js",
     "deploy": "npm run build && npm run checkout",
     "checkout": "git checkout -b deploy && npm run add",
     "add": "git add -f client/build && npm run commit",
@@ -44,6 +45,6 @@
     "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "client": "node internals/scripts/client.js",
     "server": "nodemon --watch server server/index.js",
-    "server-prod": "node server/index.js"
+    "server-prod": "node server server/index.js"
   }
 }
