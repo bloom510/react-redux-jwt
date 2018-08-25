@@ -1,0 +1,31 @@
+{
+  "name": "mern-jwt",
+    "scripts": {
+      "dokku": {
+        "postdeploy": "npm run seed"
+      },
+      "heroku": {
+        "postdeploy": "npm run seed"
+      }     
+    },
+    "env": {
+    "APP_SECRET": {
+      "description": "secret",
+      "value": "0shD10NQ6Jqg0OTN2WwwXz0ejw"
+    },
+    "MONGODB_URI": {
+      "description": "mongodb",
+      "value": "mongodb://heroku_9f0xvng2:tpcjr24p71fqd61advn8iaure1@ds259620.mlab.com:59620/heroku_9f0xvng2"
+    }
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
