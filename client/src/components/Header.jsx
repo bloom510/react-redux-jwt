@@ -65,10 +65,10 @@ class Header extends Component {
             return (
                 <div>
                     <Button color='inherit'>
-                    <Link to='/signup'>Sign Up</Link>
+                        <Link to='/signup'>Sign Up</Link>
                     </Button>
                     <Button color='inherit'>
-                    <Link to='/signin'>Sign In</Link>
+                        <Link to='/signin'>Sign In</Link>
                     </Button>
                 </div>
             )
@@ -83,10 +83,10 @@ class Header extends Component {
                         <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
                         <MenuIcon />
                         </IconButton>
+                        <Button color='inherit'>
                         <Typography variant="title" color="inherit">
                         <Link to='/'>Home</Link>
                         </Typography>
-                        <Button color='inherit'>
                         </Button>
                         <section className={classes.rightToolbar}>
                         {this.renderLinks()}
