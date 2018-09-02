@@ -21,7 +21,7 @@ class Welcome extends Component {
     reveal(){
         return (
             <div style={{marginLeft: '10%'}}>
-                YOOOO! HERE'S SOME CONTENT! YOU'RE GONNA WANNA STYLE MEEE!
+                <small>I get rendered when the card flips</small>
             </div>
         )   
     }
