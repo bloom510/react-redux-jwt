@@ -61,7 +61,7 @@ ul {
 
 .flipper {
     transition: 0.6s;
-    transform-origin: 100% 100%;
+    /* transform-origin: 100% 100%; */
 	transform-style: preserve-3d;
 	position: relative;
 }
