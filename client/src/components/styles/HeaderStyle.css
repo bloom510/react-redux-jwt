@@ -6,3 +6,8 @@
 .header a {
     margin: 0 10px;
 }
+
+.nav-a {
+    text-decoration: none;
+    color: #FFFFFF;
+}

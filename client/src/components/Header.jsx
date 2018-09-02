@@ -2,73 +2,43 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-//Import all from bin
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import './HeaderStyle.css';
 
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import grey from '@material-ui/core/colors/grey';
+import './styles/HeaderStyle.css';
+import styles from './styles/styles'
+import theme from './styles/theme'
 
-//Import from external file
-//Configure color palette here
-const theme = createMuiTheme({
-    palette: {
-      primary: {
-        light: '#757ce8',
-        main: '#3f50b5',
-        dark: '#002884',
-        contrastText: '#fff',
-      },
-      secondary: {
-        light: '#ff7961',
-        main: '#f44336',
-        dark: '#ba000d',
-        contrastText: '#000',
-      },
-    },
-  })
-
-//Import from external file
-//Configure component styles here
-const styles = {
-    rightToolbar: {
-      marginLeft: 'auto',
-      marginRight: -12,
-    },
-    menuButton: {
-      marginRight: 16,
-      marginLeft: -12,
-    },
-  };
+import { MuiThemeProvider } from '@material-ui/core/styles';
 
 class Header extends Component {
     renderLinks() {
         if(this.props.authenticated) {
             return (
                 <div>
-                    <Button color='inherit'>
-                    <Link to='/signout'>Sign Out</Link>
-                    </Button>
-                    <Button color='inherit'>
-                    <Link to='/feature'>Feature</Link>
-                    </Button>
+                    <Link className='nav-a' to='/signout'>
+                        <Button color='inherit'>
+                        Sign Out
+                        </Button>
+                    </Link>
+                    <Link className='nav-a' to='/feature'>
+                        <Button color='inherit'>
+                        Feature
+                        </Button>
+                    </Link>
                 </div>
             );
         } else {
             return (
                 <div>
+                    {/* <Button color='inherit'>
+                        <Link className='nav-a' to='/'>Home</Link>
+                    </Button> */}
                     <Button color='inherit'>
-                        <Link to='/signup'>Sign Up</Link>
-                    </Button>
-                    <Button color='inherit'>
-                        <Link to='/signin'>Sign In</Link>
+                        <Link className='nav-a' to='/signin'>Admin</Link>
                     </Button>
                 </div>
             )
@@ -80,14 +50,6 @@ class Header extends Component {
             <MuiThemeProvider theme={theme}>
                 <AppBar color='primary' position='static'>
                     <Toolbar>
-                        <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-                        <MenuIcon />
-                        </IconButton>
-                        <Button color='inherit'>
-                        <Typography variant="title" color="inherit">
-                        <Link to='/'>Home</Link>
-                        </Typography>
-                        </Button>
                         <section className={classes.rightToolbar}>
                         {this.renderLinks()}
                         </section>
