@@ -3,6 +3,13 @@ body {
     background-color: black;
 }
 
+.action {
+    display: inline-block;
+    position: relative;
+    margin-left: 5%;
+    cursor:pointer;
+}
+
 ul {
     list-style: none;
     padding: 0px;
@@ -24,7 +31,7 @@ ul {
     perspective: 1000px;
     padding: 1%;
     margin: 0 auto;
-    color: white;
+    color: #F0F8FF;
     background-color: black;
 }
 
@@ -55,7 +62,7 @@ ul {
 .flip-container, .front, .back {
     /* text-align: center; */
     padding: 5%;
-	width: 300px;
+	width: 310px;
 	height: 500px;
 }
 

@@ -1,5 +1,21 @@
 import React, { Component } from 'react';
 import './styles/welcome.css'
+import Button from '@material-ui/core/Button';
+import Call from '@material-ui/icons/Call';
+import Textsms from '@material-ui/icons/Textsms';
+import Email from '@material-ui/icons/Email';
+
+
+let iconStyles = {
+    fontSize: '14px'
+};
+
+const btnStyles = {
+    maxWidth: '30px', 
+    maxHeight: '30px', 
+    minWidth: '30px', 
+    minHeight: '30px',
+};
 
 class Welcome extends Component {
     constructor() {
@@ -46,9 +62,34 @@ class Welcome extends Component {
                         </ul>
         
                         <ul id='contact'>
-                            <li>// bloom510@protonmail.com</li> 
-                            <li>// bloom510.art</li> 
-                            <li>// (510).367.1393</li>
+                            <li>
+                                // bloom510@protonmail.com 
+                                <Button 
+                                    style={btnStyles}
+                                    variant='text' 
+                                    size='mini' 
+                                    color='inherit'
+                                    >
+                                <Email className='action' style={iconStyles} />
+                                </Button>
+                            </li> 
+                            <li>
+                                // (510).367.1393 
+                                <Button 
+                                    style={btnStyles}
+                                    variant='text' 
+                                    size='mini' 
+                                    color='inherit'>
+                                <Call className='action' style={iconStyles} />
+                                </Button>
+                                <Button 
+                                    style={btnStyles}
+                                    variant='text' 
+                                    size='mini' 
+                                    color='inherit'>
+                                <Textsms className='action' style={iconStyles} />
+                                </Button> 
+                            </li>
                         </ul>
         
                         <span>// San Francisco Bay Area</span>
