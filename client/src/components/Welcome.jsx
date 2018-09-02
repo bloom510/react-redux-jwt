@@ -4,14 +4,26 @@ import './styles/welcome.css'
 class Welcome extends Component {
     constructor() {
         super();
+        this.state = {
+            flipped: false
+        }
     }
     handleFlip(){
         const flipper = document.querySelector('.flipper');
-        if(!flipper.classList.value.includes('flipped')) {
+        if(!this.state.flipped) {
             flipper.classList.add('flipped');
+            this.setState({flipped: true})
         } else {
             flipper.classList.remove('flipped');
+            this.setState({flipped: false})
         }
+    }
+    reveal(){
+        return (
+            <div style={{marginLeft: '10%'}}>
+                YOOOO! HERE'S SOME CONTENT! YOU'RE GONNA WANNA STYLE MEEE!
+            </div>
+        )   
     }
     render() {
         return (
@@ -62,6 +74,7 @@ class Welcome extends Component {
                         <div className='flip-btn'  onClick={() => this.handleFlip()}><small>Back</small></div>
                     </div>
                 </div>
+                {this.state.flipped ? this.reveal() : null}
             </div>
         );
     }
