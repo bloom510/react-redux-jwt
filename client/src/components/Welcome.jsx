@@ -27,6 +27,7 @@ class Welcome extends Component {
     }
     render() {
         return (
+            <div>
                 <div className="flip-container">
                 <div className="flipper">
                     <div className="front">
@@ -71,11 +72,12 @@ class Welcome extends Component {
                             <img src={require('../assets/img/diamond.png')} className='stencil'/>
                         </div>
         
-                        <div className='flip-btn'  onClick={() => this.handleFlip()}><small>Back</small></div>
+                        <div className='flip-btn'  onClick={() => this.handleFlip()}><small>Home</small></div>
                     </div>
                 </div>
-                {this.state.flipped ? this.reveal() : null}
             </div>
+            {this.state.flipped ? this.reveal() : null}
+        </div>
         );
     }
     
