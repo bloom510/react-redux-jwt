@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import Button from '@material-ui/core/Button';
+
+import IconButton from '@material-ui/core/IconButton';
+import Email from '@material-ui/icons/Email';
 import Call from '@material-ui/icons/Call';
 import Textsms from '@material-ui/icons/Textsms';
-import Email from '@material-ui/icons/Email';
 
-
-
-let iconStyles = {
+const iconStyles = {
     fontSize: '14px'
 };
 
@@ -21,53 +20,54 @@ class CardFront extends Component {
     render() {
         return (
             <div className="front">
-                <div id='stencil-front' className='stencil-container'>
-                    <img src={require('../assets/img/stencil.png')} className='stencil'/>
-                </div>
+            <div id='stencil-front' className='stencil-container'>
+                <img src={require('../assets/img/stencil.png')} className='stencil'/>
+            </div>
 
-                <strong>
-                    <big>Nathan Bloomfield</big>
-                </strong>
+            <strong>
+                <big>Nathan Bloomfield</big>
+            </strong>
 
-                <ul id='occupation'>
-                    <li>// Creative Technologist</li> 
-                    <li>// Full Stack Developer</li> 
-                    <li>// New Media Artist </li>
-                </ul>
+            <ul id='occupation'>
+                <li>// Creative Technologist</li> 
+                <li>// Full Stack Developer</li> 
+                <li>// New Media Artist </li>
+            </ul>
 
-                <ul id='contact'>
-                    <li>
-                        // bloom510@protonmail.com 
-                        <Button 
-                            style={btnStyles}
-                            variant='text' 
-                            color='inherit'
-                            >
+            <ul id='contact'>
+                <li>
+                    // bloom510@protonmail.com 
+                    <IconButton
+                        style={btnStyles}
+                        variant='text' 
+                        color='inherit'>
                         <Email className='action' style={iconStyles} />
-                        </Button>
-                    </li> 
-                    <li>
-                        // (510) 367.1393 
-                        <Button 
-                            style={btnStyles}
-                            variant='text' 
-                            color='inherit'>
+                    </IconButton>
+                </li> 
+                <li>
+                    // (510) 367.1393 
+                    <IconButton
+                        style={btnStyles}
+                        variant='text' 
+                        color='inherit'>
                         <Call className='action' style={iconStyles} />
-                        </Button>
-                        <Button 
-                            style={btnStyles}
-                            variant='text' 
-                            color='inherit'>
+                    </IconButton>
+
+                    <IconButton
+                        style={btnStyles}
+                        variant='text' 
+                        color='inherit'>
                         <Textsms className='action' style={iconStyles} />
-                        </Button> 
-                    </li>
-                </ul>
+                    </IconButton>
+                </li>
+            </ul>
 
             <span>// San Francisco Bay Area</span>
 
-            <div className='flip-btn' onClick={() => this.handleFlip()}><small>See more</small></div>
+            { this.props.children }
+            
         </div>
-        )
+        );
     }
 }
 
