@@ -28,6 +28,6 @@ export const signout = () => {
 
     return {
         type: AUTH_USER,
-        payload: ''
+        redirect: true
     }
 }

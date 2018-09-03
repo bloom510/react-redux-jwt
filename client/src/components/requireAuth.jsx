@@ -3,12 +3,10 @@ import { connect } from 'react-redux';
 
 export default ChildComponent => {
     class ComposedComponent extends Component {
-        // Our component just rendered
         componentDidMount() {
             this.shouldNavigateAway();
         }
 
-        // Our component just updated
         componentDidUpdate() {
             this.shouldNavigateAway();
         }

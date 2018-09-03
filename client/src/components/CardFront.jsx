@@ -5,16 +5,7 @@ import Email from '@material-ui/icons/Email';
 import Call from '@material-ui/icons/Call';
 import Textsms from '@material-ui/icons/Textsms';
 
-const iconStyles = {
-    fontSize: '14px'
-};
-
-const btnStyles = {
-    maxWidth: '40px', 
-    maxHeight: '15px', 
-    minWidth: '40px', 
-    minHeight: '15px',
-};
+import { iconStyles, btnStyles } from './styles/styles.js';
 
 class CardFront extends Component {
     render() {
@@ -44,6 +35,7 @@ class CardFront extends Component {
                         <Email className='action' style={iconStyles} />
                     </IconButton>
                 </li> 
+
                 <li>
                     // (510) 367.1393 
                     <IconButton
@@ -63,7 +55,8 @@ class CardFront extends Component {
             </ul>
 
             <span>// San Francisco Bay Area</span>
-
+            
+            {/* Any other components or content, like Flipper button */}
             { this.props.children }
 
         </div>

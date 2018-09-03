@@ -38,13 +38,19 @@ class Welcome extends Component {
                 <div className="flip-container">
                 <div className="flipper">
                     <CardFront>
-                        <Flipper onClick={() => this.handleFlip()} />
+                        <Flipper onClick={() => this.handleFlip()}>
+                            See more
+                        </Flipper>
                     </CardFront>
                     <CardBack>
-                        <Flipper onClick={() => this.handleFlip()} />
+                        <Flipper onClick={() => this.handleFlip()}>
+                            Back
+                        </ Flipper>
                     </CardBack>
                 </div>
             </div>
+            {/* You can conditionally render components based on card direction */}
+            {/* For example: */}
             {/* {this.state.flipped ? this.reveal() : null} */}
         </div>
         );

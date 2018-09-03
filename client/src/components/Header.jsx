@@ -9,7 +9,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 
 import './styles/HeaderStyle.css';
-import styles from './styles/styles'
+import { styles } from './styles/styles'
 import theme from './styles/theme'
 
 import { MuiThemeProvider } from '@material-ui/core/styles';
@@ -24,6 +24,7 @@ class Header extends Component {
                         Sign Out
                         </Button>
                     </Link>
+                    
                     <Link className='nav-a' to='/feature'>
                         <Button color='inherit'>
                         Feature
