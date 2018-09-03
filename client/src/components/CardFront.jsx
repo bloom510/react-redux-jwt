@@ -11,9 +11,9 @@ const iconStyles = {
 
 const btnStyles = {
     maxWidth: '40px', 
-    maxHeight: '30px', 
+    maxHeight: '15px', 
     minWidth: '40px', 
-    minHeight: '30px',
+    minHeight: '15px',
 };
 
 class CardFront extends Component {
@@ -39,7 +39,7 @@ class CardFront extends Component {
                     // bloom510@protonmail.com 
                     <IconButton
                         style={btnStyles}
-                        variant='text' 
+                        variant='contained' 
                         color='inherit'>
                         <Email className='action' style={iconStyles} />
                     </IconButton>
@@ -48,14 +48,14 @@ class CardFront extends Component {
                     // (510) 367.1393 
                     <IconButton
                         style={btnStyles}
-                        variant='text' 
+                        variant='outlined' 
                         color='inherit'>
                         <Call className='action' style={iconStyles} />
                     </IconButton>
 
                     <IconButton
                         style={btnStyles}
-                        variant='text' 
+                        variant='outlined' 
                         color='inherit'>
                         <Textsms className='action' style={iconStyles} />
                     </IconButton>
@@ -65,7 +65,7 @@ class CardFront extends Component {
             <span>// San Francisco Bay Area</span>
 
             { this.props.children }
-            
+
         </div>
         );
     }
