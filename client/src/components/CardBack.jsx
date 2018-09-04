@@ -17,7 +17,7 @@ class CardBack extends Component {
             </p>
 
             <div id='stencil-front' className='stencil-container'>
-                <img src={require('../assets/img/diamond.png')} className='stencil'/>
+                <img src={require('./assets/img/diamond.png')} className='stencil'/>
             </div>
             {/* We'd like to add any other content or components at the bottom */}
             {/* For example, a Flipper button */}

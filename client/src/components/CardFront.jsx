@@ -12,7 +12,7 @@ class CardFront extends Component {
         return (
             <div className="front">
             <div id='stencil-front' className='stencil-container'>
-                <img src={require('../assets/img/stencil.png')} className='stencil'/>
+                <img src={require('./assets/img/stencil.png')} className='stencil'/>
             </div>
 
             <strong>

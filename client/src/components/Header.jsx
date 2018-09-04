@@ -27,7 +27,7 @@ class Header extends Component {
                     
                     <Link className='nav-a' to='/feature'>
                         <Button color='inherit'>
-                        Feature
+                        Dashboard
                         </Button>
                     </Link>
                 </div>
