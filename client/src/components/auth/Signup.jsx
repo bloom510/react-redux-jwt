@@ -91,8 +91,6 @@ class Signup extends Component {
                         size='small'
                         color='primary'>Submit</Button>
                     </fieldset>
-                    {/* <button>Sign Up!</button> */}
-                
                     <div>{this.props.errorMessage}</div>
             </form> 
         </MuiThemeProvider>

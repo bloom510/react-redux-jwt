@@ -1,7 +1,7 @@
 form {
-    position: relative;
     overflow: auto;
-    padding: 2%;
+    padding-left: 3%;
+    padding-top: 3%;
     width: 90%;
     margin: 0 auto;
     margin-top: 10%;
@@ -10,7 +10,7 @@ form {
 
 input[type=text], input[type=password] {
     box-shadow: 0 0 3px 0 #F0F8FF;
-    width: 250px;
+    width: 315px;
 }
 
 fieldset {

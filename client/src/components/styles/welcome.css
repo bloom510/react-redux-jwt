@@ -71,7 +71,8 @@ ul {
     box-shadow: 0 0 3px 0 #F0F8FF;
 	position: absolute;
 	top: 0;
-	left: 0;
+    left: 0;
+    /* overflow-y: scroll; */
 }
 
 .front {
@@ -82,3 +83,4 @@ ul {
 .back {
 	transform: rotateY(180deg);
 }
+
