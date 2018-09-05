@@ -35,9 +35,9 @@ class Header extends Component {
         } else {
             return (
                 <div>
-                    {/* <Button color='inherit'>
+                    <Button color='inherit'>
                         <Link className='nav-a' to='/'>Home</Link>
-                    </Button> */}
+                    </Button>
                     <Button color='inherit'>
                         <Link className='nav-a' to='/signin'>Admin</Link>
                     </Button>

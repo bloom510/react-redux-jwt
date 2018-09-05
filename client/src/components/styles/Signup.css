@@ -1,0 +1,14 @@
+form {
+    position: relative;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 2%;
+    width: 50%;
+    box-shadow: 0 0 3px 0 #F0F8FF;
+}
+input[type=text], input[type=password] {
+    box-shadow: 0 0 3px 0 #F0F8FF;
+}
+fieldset {
+    border: none;
+}

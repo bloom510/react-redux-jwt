@@ -28,29 +28,34 @@ class CardFront extends Component {
             <ul id='contact'>
                 <li>
                     // bloom510@protonmail.com 
-                    <IconButton
-                        style={btnStyles}
-                        variant='contained' 
-                        color='inherit'>
-                        <Email className='action' style={iconStyles} />
-                    </IconButton>
+                    <a style={{ color: 'inherit' }} href='mailto:bloom510@protonmail.com'>
+                        <IconButton
+                            style={btnStyles}
+                            variant='contained' 
+                            color='inherit'>
+                            <Email className='action' style={iconStyles} />
+                        </IconButton>
+                    </a>
                 </li> 
 
                 <li>
                     // (510) 367.1393 
-                    <IconButton
-                        style={btnStyles}
-                        variant='outlined' 
-                        color='inherit'>
-                        <Call className='action' style={iconStyles} />
-                    </IconButton>
-
-                    <IconButton
-                        style={btnStyles}
-                        variant='outlined' 
-                        color='inherit'>
-                        <Textsms className='action' style={iconStyles} />
-                    </IconButton>
+                    <a style={{ color: 'inherit' }} href='tel:+1-510-367-1393'>
+                        <IconButton
+                            style={btnStyles}
+                            variant='outlined' 
+                            color='inherit'>
+                            <Call className='action' style={iconStyles}/>
+                        </IconButton>
+                    </a>
+                    <a style={{ color: 'inherit', textDecoration: 'none' }} href='sms:+1-510-367-1393'>
+                        <IconButton
+                            style={btnStyles}
+                            variant='outlined' 
+                            color='inherit'>
+                            <Textsms className='action' style={iconStyles} />
+                        </IconButton>
+                    </a>
                 </li>
             </ul>
 
