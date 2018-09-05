@@ -63,37 +63,37 @@ class Signup extends Component {
         return (
         <MuiThemeProvider theme={theme}>
             <form onSubmit={handleSubmit(this.onSubmit)}>
-            <fieldset>
-                <legend>email</legend>
-                    <Field
-                    //  label='email'
-                     name='email'
-                     type='text'
-                     component={this.renderTextField}
-                     autoComplete='none'
-                    />
-                </fieldset>
+                <fieldset>
+                    <legend>email</legend>
+                        <Field
+                        //  label='email'
+                        name='email'
+                        type='text'
+                        component={this.renderTextField}
+                        autoComplete='none'
+                        />
+                    </fieldset>
 
-                <fieldset>
-                        <legend>password</legend>
-                    <Field
-                    //  label='password'
-                     name='password'
-                     type='password'
-                     component={this.renderTextField}
-                     autoComplete='none'
-                    />
-                </fieldset>
-                <fieldset>
-                <Button
-                    type='submit'
-                    variant='contained' 
-                    size='small'
-                    color='primary'>Submit</Button>
-                </fieldset>
-                {/* <button>Sign Up!</button> */}
-               
-                <div>{this.props.errorMessage}</div>
+                    <fieldset>
+                            <legend>password</legend>
+                        <Field
+                        //  label='password'
+                        name='password'
+                        type='password'
+                        component={this.renderTextField}
+                        autoComplete='none'
+                        />
+                    </fieldset>
+                    <fieldset>
+                    <Button
+                        type='submit'
+                        variant='contained' 
+                        size='small'
+                        color='primary'>Submit</Button>
+                    </fieldset>
+                    {/* <button>Sign Up!</button> */}
+                
+                    <div>{this.props.errorMessage}</div>
             </form> 
         </MuiThemeProvider>
         )
