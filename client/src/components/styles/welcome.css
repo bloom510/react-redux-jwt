@@ -53,7 +53,7 @@ ul {
     overflow: hidden;
 }
 
-.flip-container, .front, .back {
+.flip-container{
     margin: 0 auto;
 	width: 320px;
 	height: 500px;
@@ -78,9 +78,14 @@ ul {
     padding: 5%;
     z-index: 2;
     transform: rotateY(0deg);
+    width: 320px;
+	height: 500px;
 }
 
 .back {
-	transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    width: auto;
+    height: auto;
+    left: -12%;
 }
 

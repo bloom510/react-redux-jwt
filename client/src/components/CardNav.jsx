@@ -24,6 +24,7 @@ const styles = theme => ({
   root: {
     backgroundColor: 'black',
     width: 'auto',
+
   },
 });
 
@@ -53,9 +54,9 @@ class FullWidthTabs extends Component {
             textColor="primary"
             fullWidth
           >
-            <Tab label="Item One" />
-            <Tab label="Item Two" />
-            <Tab label="Item Three" />
+            <Tab label="Bio" />
+            <Tab label="Services" />
+            <Tab label="Portfolio" />
           </Tabs>
         </AppBar>
         <SwipeableViews
@@ -63,9 +64,15 @@ class FullWidthTabs extends Component {
           index={this.state.value}
           onChangeIndex={this.handleChangeIndex}
         >
-          <TabContainer dir={theme.direction}>Item One</TabContainer>
-          <TabContainer dir={theme.direction}>Item Two</TabContainer>
-          <TabContainer dir={theme.direction}>Item Three</TabContainer>
+          <TabContainer dir={theme.direction}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel ipsum nec nunc euismod elementum ac ac ligula. Ut sem est, sagittis vitae viverra sed, iaculis sed urna. Phasellus elementum, dui eget bibendum pretium, sapien justo fermentum diam, non pharetra mi leo suscipit quam. In ipsum nisi, mollis id augue sit amet, rutrum varius turpis. Phasellus vel dolor et nunc varius ornare eu ac mi. Ut nec tempus dui. Pellentesque volutpat nisi nulla, sit amet elementum quam consequat et. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras venenatis accumsan arcu, in sollicitudin nulla interdum et. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sit amet nisl in tellus porta faucibus vitae posuere felis. Praesent imperdiet porttitor nibh at tincidunt. In varius neque leo, at posuere nulla dignissim a.
+          </TabContainer>
+          <TabContainer dir={theme.direction}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel ipsum nec nunc euismod elementum ac ac ligula. Ut sem est, sagittis vitae viverra sed, iaculis sed urna. Phasellus elementum, dui eget bibendum pretium, sapien justo fermentum diam, non pharetra mi leo suscipit quam. In ipsum nisi, mollis id augue sit amet, rutrum varius turpis. Phasellus vel dolor et nunc varius ornare eu ac mi. Ut nec tempus dui. Pellentesque volutpat nisi nulla, sit amet elementum quam consequat et. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras venenatis accumsan arcu, in sollicitudin nulla interdum et. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sit amet nisl in tellus porta faucibus vitae posuere felis. Praesent imperdiet porttitor nibh at tincidunt. In varius neque leo, at posuere nulla dignissim a.
+          </TabContainer>
+          <TabContainer dir={theme.direction}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel ipsum nec nunc euismod elementum ac ac ligula. Ut sem est, sagittis vitae viverra sed, iaculis sed urna. Phasellus elementum, dui eget bibendum pretium, sapien justo fermentum diam, non pharetra mi leo suscipit quam. In ipsum nisi, mollis id augue sit amet, rutrum varius turpis. Phasellus vel dolor et nunc varius ornare eu ac mi. Ut nec tempus dui. Pellentesque volutpat nisi nulla, sit amet elementum quam consequat et. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras venenatis accumsan arcu, in sollicitudin nulla interdum et. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sit amet nisl in tellus porta faucibus vitae posuere felis. Praesent imperdiet porttitor nibh at tincidunt. In varius neque leo, at posuere nulla dignissim a.
+          </TabContainer>
         </SwipeableViews>
       </div>
     );
