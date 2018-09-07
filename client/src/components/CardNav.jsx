@@ -1,104 +1,80 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import ExpansionPanel from '@material-ui/core/ExpansionPanel';
-import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
-import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+import SwipeableViews from 'react-swipeable-views';
+import AppBar from '@material-ui/core/AppBar';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+
+function TabContainer({ children, dir }) {
+  return (
+    <Typography component="div" dir={dir} style={{ color: 'white', padding: 8 * 3 }}>
+      {children}
+    </Typography>
+  );
+}
+
+TabContainer.propTypes = {
+  children: PropTypes.node.isRequired,
+  dir: PropTypes.string.isRequired,
+};
 
 const styles = theme => ({
   root: {
-    width: '100%',
-    marginTop: '34%'
-  },
-  
-  heading: {
-    fontSize: theme.typography.pxToRem(15),
-    flexBasis: '33.33%',
-    flexShrink: 0,
-  },
-  secondaryHeading: {
-    fontSize: theme.typography.pxToRem(15),
-    color: theme.palette.text.secondary,
+    backgroundColor: 'black',
+    width: 'auto',
   },
 });
 
-class CardNav extends Component {
+class FullWidthTabs extends Component {
   state = {
-    expanded: null,
+    value: 0,
   };
 
-  handleChange = panel => (event, expanded) => {
-    this.setState({
-      expanded: expanded ? panel : false,
-    });
+  handleChange = (event, value) => {
+    this.setState({ value });
+  };
+
+  handleChangeIndex = index => {
+    this.setState({ value: index });
   };
 
   render() {
-    const { classes } = this.props;
-    const { expanded } = this.state;
+    const { classes, theme } = this.props;
 
     return (
       <div className={classes.root}>
-        <ExpansionPanel expanded={expanded === 'panel1'} onChange={this.handleChange('panel1')}>
-          <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography className={classes.heading}>Bio</Typography>
-            <Typography className={classes.secondaryHeading}>About me</Typography>
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
-            <Typography>
-              Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat. Aliquam eget
-              maximus est, id dignissim quam.
-            </Typography>
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
-        <ExpansionPanel expanded={expanded === 'panel2'} onChange={this.handleChange('panel2')}>
-          <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography className={classes.heading}>Services</Typography>
-            <Typography className={classes.secondaryHeading}>
-              Let's build.
-            </Typography>
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
-            <Typography>
-              Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus, varius pulvinar
-              diam eros in elit. Pellentesque convallis laoreet laoreet.
-            </Typography>
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
-        <ExpansionPanel expanded={expanded === 'panel3'} onChange={this.handleChange('panel3')}>
-          <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography className={classes.heading}>Portfolio</Typography>
-            <Typography className={classes.secondaryHeading}>
-              View a collection of my work.
-            </Typography>
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
-            <Typography>
-              Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit amet egestas
-              eros, vitae egestas augue. Duis vel est augue.
-            </Typography>
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
-        <ExpansionPanel expanded={expanded === 'panel4'} onChange={this.handleChange('panel4')}>
-          <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography className={classes.heading}>More</Typography>
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
-            <Typography>
-              Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit amet egestas
-              eros, vitae egestas augue. Duis vel est augue.
-            </Typography>
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
+        <AppBar position="static" color="default">
+          <Tabs
+            value={this.state.value}
+            onChange={this.handleChange}
+            indicatorColor="primary"
+            textColor="primary"
+            fullWidth
+          >
+            <Tab label="Item One" />
+            <Tab label="Item Two" />
+            <Tab label="Item Three" />
+          </Tabs>
+        </AppBar>
+        <SwipeableViews
+          axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+          index={this.state.value}
+          onChangeIndex={this.handleChangeIndex}
+        >
+          <TabContainer dir={theme.direction}>Item One</TabContainer>
+          <TabContainer dir={theme.direction}>Item Two</TabContainer>
+          <TabContainer dir={theme.direction}>Item Three</TabContainer>
+        </SwipeableViews>
       </div>
     );
   }
 }
 
-CardNav.propTypes = {
+FullWidthTabs.propTypes = {
   classes: PropTypes.object.isRequired,
+  theme: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(CardNav);
+export default withStyles(styles, { withTheme: true })(FullWidthTabs);

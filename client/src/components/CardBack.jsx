@@ -22,6 +22,7 @@ class CardBack extends Component {
             </div> */}
 
             <CardNav className='card-nav' />
+            
             {/* We'd like to add any other content or components at the bottom */}
             {/* For example, a Flipper button */}
             { this.props.children }

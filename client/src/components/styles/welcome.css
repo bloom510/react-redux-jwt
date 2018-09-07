@@ -66,7 +66,6 @@ ul {
 }
 
 .front, .back {
-    padding: 5%;
 	backface-visibility: hidden;
     box-shadow: 0 0 3px 0 #F0F8FF;
 	position: absolute;
@@ -76,6 +75,7 @@ ul {
 }
 
 .front {
+    padding: 5%;
     z-index: 2;
     transform: rotateY(0deg);
 }

@@ -50,6 +50,18 @@
   version "7.0.0-beta.51"
   resolved "https://registry.npmjs.org/@babel/parser/-/parser-7.0.0-beta.51.tgz#27cec2df409df60af58270ed8f6aa55409ea86f6"
 
+"@babel/runtime@7.0.0":
+  version "7.0.0"
+  resolved "https://registry.npmjs.org/@babel/runtime/-/runtime-7.0.0.tgz#adeb78fedfc855aa05bc041640f3f6f98e85424c"
+  dependencies:
+    regenerator-runtime "^0.12.0"
+
+"@babel/runtime@7.0.0-rc.1":
+  version "7.0.0-rc.1"
+  resolved "https://registry.npmjs.org/@babel/runtime/-/runtime-7.0.0-rc.1.tgz#42f36fc5817911c89ea75da2b874054922967616"
+  dependencies:
+    regenerator-runtime "^0.12.0"
+
 "@babel/template@7.0.0-beta.51":
   version "7.0.0-beta.51"
   resolved "https://registry.npmjs.org/@babel/template/-/template-7.0.0-beta.51.tgz#9602a40aebcf357ae9677e2532ef5fc810f5fbff"
@@ -2223,6 +2235,10 @@ dom-converter@~0.1:
   dependencies:
     utila "~0.3"
 
+dom-helpers@^3.2.1:
+  version "3.3.1"
+  resolved "https://registry.npmjs.org/dom-helpers/-/dom-helpers-3.3.1.tgz#fc1a4e15ffdf60ddde03a480a9c0fece821dd4a6"
+
 dom-serializer@0, dom-serializer@~0.1.0:
   version "0.1.0"
   resolved "https://registry.npmjs.org/dom-serializer/-/dom-serializer-0.1.0.tgz#073c697546ce0780ce23be4a28e293e40bc30c82"
@@ -2919,7 +2935,7 @@ fb-watchman@^2.0.0:
   dependencies:
     bser "^2.0.0"
 
-fbjs@^0.8.16:
+fbjs@^0.8.16, fbjs@^0.8.4:
   version "0.8.17"
   resolved "https://registry.npmjs.org/fbjs/-/fbjs-0.8.17.tgz#c4d598ead6949112653d6588b01a5cdcd9f90fdd"
   dependencies:
@@ -4478,6 +4494,10 @@ jwt-simple@^0.5.1:
 kareem@2.2.1:
   version "2.2.1"
   resolved "https://registry.npmjs.org/kareem/-/kareem-2.2.1.tgz#9950809415aa3cde62ab43b4f7b919d99816e015"
+
+keycode@^2.1.7:
+  version "2.2.0"
+  resolved "https://registry.npmjs.org/keycode/-/keycode-2.2.0.tgz#3d0af56dc7b8b8e5cba8d0a97f107204eec22b04"
 
 killable@^1.0.0:
   version "1.0.0"
@@ -6060,7 +6080,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.10, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2:
+prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2:
   version "15.6.2"
   resolved "https://registry.npmjs.org/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
   dependencies:
@@ -6256,6 +6276,14 @@ react-error-overlay@^4.0.1:
   version "4.0.1"
   resolved "https://registry.npmjs.org/react-error-overlay/-/react-error-overlay-4.0.1.tgz#417addb0814a90f3a7082eacba7cee588d00da89"
 
+react-event-listener@^0.6.0:
+  version "0.6.3"
+  resolved "https://registry.npmjs.org/react-event-listener/-/react-event-listener-0.6.3.tgz#8eab88129a76e095ed8aa684c29679eded1e843d"
+  dependencies:
+    "@babel/runtime" "7.0.0-rc.1"
+    prop-types "^15.6.0"
+    warning "^4.0.1"
+
 react-is@^16.4.2:
   version "16.4.2"
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.4.2.tgz#84891b56c2b6d9efdee577cc83501dfc5ecead88"
@@ -6338,6 +6366,35 @@ react-scripts@1.1.5:
     whatwg-fetch "2.0.3"
   optionalDependencies:
     fsevents "^1.1.3"
+
+react-swipeable-views-core@^0.12.17:
+  version "0.12.17"
+  resolved "https://registry.npmjs.org/react-swipeable-views-core/-/react-swipeable-views-core-0.12.17.tgz#0998f55fd2f8595bcd01bead1c19516dc561c1cf"
+  dependencies:
+    "@babel/runtime" "7.0.0"
+    warning "^4.0.1"
+
+react-swipeable-views-utils@^0.12.17:
+  version "0.12.17"
+  resolved "https://registry.npmjs.org/react-swipeable-views-utils/-/react-swipeable-views-utils-0.12.17.tgz#5219faa766b683d907288cdd7b86c0a14b577b7f"
+  dependencies:
+    "@babel/runtime" "7.0.0"
+    fbjs "^0.8.4"
+    keycode "^2.1.7"
+    prop-types "^15.6.0"
+    react-event-listener "^0.6.0"
+    react-swipeable-views-core "^0.12.17"
+
+react-swipeable-views@^0.12.17:
+  version "0.12.17"
+  resolved "https://registry.npmjs.org/react-swipeable-views/-/react-swipeable-views-0.12.17.tgz#4d6a9bf4b667ce7b7aac3112d696598b94a1cf30"
+  dependencies:
+    "@babel/runtime" "7.0.0"
+    dom-helpers "^3.2.1"
+    prop-types "^15.5.4"
+    react-swipeable-views-core "^0.12.17"
+    react-swipeable-views-utils "^0.12.17"
+    warning "^4.0.1"
 
 react-test-renderer@^16.0.0-0, react-test-renderer@^16.4.2:
   version "16.4.2"
@@ -6488,6 +6545,10 @@ regenerate@^1.2.1:
 regenerator-runtime@^0.11.0:
   version "0.11.1"
   resolved "https://registry.npmjs.org/regenerator-runtime/-/regenerator-runtime-0.11.1.tgz#be05ad7f9bf7d22e056f9726cee5017fbf19e2e9"
+
+regenerator-runtime@^0.12.0:
+  version "0.12.1"
+  resolved "https://registry.npmjs.org/regenerator-runtime/-/regenerator-runtime-0.12.1.tgz#fa1a71544764c036f8c49b13a08b2594c9f8a0de"
 
 regenerator-transform@^0.10.0:
   version "0.10.1"
