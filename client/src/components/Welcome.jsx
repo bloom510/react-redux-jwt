@@ -15,12 +15,18 @@ class Welcome extends Component {
 
     handleFlip(){
         const flipper = document.querySelector('.flipper');
+        const back = document.querySelector('.back');
+
         if(!this.state.flipped) {
             flipper.classList.add('flipped');
+            back.classList.add('expand');
             this.setState({flipped: true})
         } else {
-            flipper.classList.remove('flipped');
-            this.setState({flipped: false})
+            back.classList.remove('expand');
+            setTimeout(() => {
+                flipper.classList.remove('flipped');
+                this.setState({flipped: false})
+            } , 1500)
         }
     }
     
