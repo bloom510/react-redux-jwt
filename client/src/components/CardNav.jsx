@@ -7,13 +7,19 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Bio from './Bio'
+import Indicator from './Indicator';
 
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
 function TabContainer({ children, dir }) {
   return (
-    <Typography component="div" dir={dir} style={{ color: 'white', padding: 8 * 3 }}>
+    <Typography component="div" dir={dir} 
+      style={{ 
+        color: 'white', 
+        padding: 8 * 3,  
+        height: '420px',
+        }}>
       {children}
     </Typography>
   );
@@ -27,12 +33,18 @@ TabContainer.propTypes = {
 const styles = theme => ({
   root: {
     backgroundColor: 'black',
+    // backgroundImage: `url(${require('./assets/img/headshot2.jpg')})`,
+    // backgroundRepeat: 'no-repeat',
+    // backgroundSize: '100%',
+    // backgroundPosition: '50%',
     width: '100%',
+    height: '500px',
   },
   tabsIndicator: {
-    backgroundColor: 'transparent',
+    background: 'transparent',
   }
 });
+
 
 
 
@@ -44,6 +56,7 @@ class FullWidthTabs extends Component {
 
   handleChange = (event, value) => {
     this.setState({ value });
+
   };
 
   handleChangeIndex = index => {
@@ -72,36 +85,37 @@ class FullWidthTabs extends Component {
             <Tab label="Portfolio" />
           </Tabs>
         </AppBar>
+
         <SwipeableViews
           axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
           index={this.state.value}
           onChangeIndex={this.handleChangeIndex}
         >
           <TabContainer dir={theme.direction}>
+          {/* <div className='bio-img-container'></div>  */}
             <Bio />
             <p>
+
             We're under construction here, please check back soon...
+            
+            
             </p>
+
+           
+
           </TabContainer>
           <TabContainer dir={theme.direction}>
-          <p>
-            Currently taking on new projects for individuals and small business, as well as looking for a job that's the right fit. Think I might fit that spot? <u>Contact me.</u>
-          </p>
-          <p>
-            Languages: JavaScript (React, Node, jQuery), Python, HTML5, CSS3.
-          </p>
-            Tools: Redux, Web Audio, Canvas, Socket.io, UI Libraries (Bootstrap, Materialize), Databases (SQL and NoSQL), and more...
-          <p>
-            Interests: Deep Learning, New Media / Interdisciplinary art, the Jazz-Hop Continuum, and more...
-          </p>
+          <h2>Services</h2>
           <p>
             We're under construction here, please check back soon...
           </p>
           </TabContainer>
           <TabContainer dir={theme.direction}>
+          <h2>Portfolio</h2>
             We're under construction here, please check back soon...
           </TabContainer>
         </SwipeableViews>
+        <Indicator tabNum={3} focus={this.state.value} />
       </div>
     );
   }

@@ -96,14 +96,25 @@ ul {
     left: -72%;
 }
 
+.bio-img-container {
+    /* position: absolute; */
+    margin-left: -4%;
+    width: 720px;
+    height: 150px;
+    
+    background: url('../assets/img/headshot2.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen
 and (min-width : 320px)
 and (max-width : 480px) {
     .back {
-        width: auto;
+        width: 320px;
         height: 500px;
-        left: -12%;
+        left: -4%;
     }
 }
 

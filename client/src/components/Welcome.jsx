@@ -29,6 +29,8 @@ class Welcome extends Component {
             })
 
         } else {
+            const timeout = window.innerWidth <= 480 ? 0 : 1500;
+            console.log('timeout', timeout)
             back.classList.remove('expand');
             setTimeout(() => {
                 flipper.classList.remove('flipped');
@@ -38,7 +40,7 @@ class Welcome extends Component {
                     // width: this.props.resize(false).px
                 })
 
-            } , 1500)
+            } , timeout)
         }
         console.log(this.state)
 

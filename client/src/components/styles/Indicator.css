@@ -1,0 +1,20 @@
+.circle {
+    font-size: 12px;
+    transition: font-size .75s;
+
+}
+
+.view-focus {
+    font-size: 15px;
+}
+
+
+.circle:before {
+    margin-left: 2px;
+    content: ' \25CF';
+}
+
+.indicator-container {
+    text-align: center;
+    width: 100%;
+}
