@@ -1,5 +1,5 @@
 import axios from'axios';
-import { AUTH_USER, AUTH_ERROR } from './types';
+import { AUTH_USER, AUTH_ERROR, CARD_FLIP } from './types';
 
 export const signup = (formProps, callback) => async dispatch => {
     try {
@@ -29,5 +29,12 @@ export const signout = () => {
     return {
         type: AUTH_USER,
         redirect: true
+    }
+}
+
+export const resize = (props, callback) => {
+    return { 
+        type: CARD_FLIP, 
+        flipped: props.flipped 
     }
 }

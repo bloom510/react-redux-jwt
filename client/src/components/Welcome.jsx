@@ -5,11 +5,14 @@ import CardFront from './CardFront';
 import CardBack from './CardBack';
 import Flipper from './Flipper';
 
+import { connect } from 'react-redux';
+import * as actions from '../actions';
+
 class Welcome extends Component {
     constructor() {
         super();
         this.state = {
-            flipped: false
+            flipped: false,
         }
     }
 
@@ -20,14 +23,25 @@ class Welcome extends Component {
         if(!this.state.flipped) {
             flipper.classList.add('flipped');
             back.classList.add('expand');
-            this.setState({flipped: true})
+            this.setState({
+                flipped: true, 
+                // width: this.props.resize(true).px
+            })
+
         } else {
             back.classList.remove('expand');
             setTimeout(() => {
                 flipper.classList.remove('flipped');
-                this.setState({flipped: false})
+                this.props.resize(false)
+                this.setState({
+                    flipped: false, 
+                    // width: this.props.resize(false).px
+                })
+
             } , 1500)
         }
+        console.log(this.state)
+
     }
     
     reveal(){
@@ -48,7 +62,7 @@ class Welcome extends Component {
                             See more
                         </Flipper>
                     </CardFront>
-                    <CardBack>
+                    <CardBack flipped={this.state.flipped}>
                         <Flipper onClick={() => this.handleFlip()}>
                             Back
                         </ Flipper>
@@ -63,4 +77,5 @@ class Welcome extends Component {
     }
     
 }
-export default Welcome;
+
+export default connect(null, actions)(Welcome);

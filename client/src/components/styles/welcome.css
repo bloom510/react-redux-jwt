@@ -85,6 +85,7 @@ ul {
 .back {
     transition: all 2s;
     transform: rotateY(180deg);
+
     width: 320px;
     height: 500px;
 }
@@ -93,7 +94,6 @@ ul {
     transition: all 2s;
     width: 720px;
     left: -72%;
-
 }
 
 /* Smartphones (portrait and landscape) ----------- */

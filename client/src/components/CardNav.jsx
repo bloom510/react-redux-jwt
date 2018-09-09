@@ -6,6 +6,10 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
+import Bio from './Bio'
+
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 
 function TabContainer({ children, dir }) {
   return (
@@ -23,12 +27,17 @@ TabContainer.propTypes = {
 const styles = theme => ({
   root: {
     backgroundColor: 'black',
-    width: 'auto',
-
+    width: '100%',
   },
+  tabsIndicator: {
+    backgroundColor: 'transparent',
+  }
 });
 
+
+
 class FullWidthTabs extends Component {
+
   state = {
     value: 0,
   };
@@ -43,14 +52,18 @@ class FullWidthTabs extends Component {
 
   render() {
     const { classes, theme } = this.props;
-
     return (
       <div className={classes.root}>
-        <AppBar position="static" color="default">
+        <AppBar 
+         position="static" 
+         color="default"
+         >
           <Tabs
             value={this.state.value}
             onChange={this.handleChange}
             indicatorColor="primary"
+
+            classes={{indicator:classes.tabsIndicator}}
             textColor="primary"
             fullWidth
           >
@@ -65,13 +78,28 @@ class FullWidthTabs extends Component {
           onChangeIndex={this.handleChangeIndex}
         >
           <TabContainer dir={theme.direction}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel ipsum nec nunc euismod elementum ac ac ligula. Ut sem est, sagittis vitae viverra sed, iaculis sed urna. Phasellus elementum, dui eget bibendum pretium, sapien justo fermentum diam, non pharetra mi leo suscipit quam. In ipsum nisi, mollis id augue sit amet, rutrum varius turpis. Phasellus vel dolor et nunc varius ornare eu ac mi. Ut nec tempus dui. Pellentesque volutpat nisi nulla, sit amet elementum quam consequat et. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras venenatis accumsan arcu, in sollicitudin nulla interdum et. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sit amet nisl in tellus porta faucibus vitae posuere felis. Praesent imperdiet porttitor nibh at tincidunt. In varius neque leo, at posuere nulla dignissim a.
+            <Bio />
+            <p>
+            We're under construction here, please check back soon...
+            </p>
           </TabContainer>
           <TabContainer dir={theme.direction}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel ipsum nec nunc euismod elementum ac ac ligula. Ut sem est, sagittis vitae viverra sed, iaculis sed urna. Phasellus elementum, dui eget bibendum pretium, sapien justo fermentum diam, non pharetra mi leo suscipit quam. In ipsum nisi, mollis id augue sit amet, rutrum varius turpis. Phasellus vel dolor et nunc varius ornare eu ac mi. Ut nec tempus dui. Pellentesque volutpat nisi nulla, sit amet elementum quam consequat et. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras venenatis accumsan arcu, in sollicitudin nulla interdum et. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sit amet nisl in tellus porta faucibus vitae posuere felis. Praesent imperdiet porttitor nibh at tincidunt. In varius neque leo, at posuere nulla dignissim a.
+          <p>
+            Currently taking on new projects for individuals and small business, as well as looking for a job that's the right fit. Think I might fit that spot? <u>Contact me.</u>
+          </p>
+          <p>
+            Languages: JavaScript (React, Node, jQuery), Python, HTML5, CSS3.
+          </p>
+            Tools: Redux, Web Audio, Canvas, Socket.io, UI Libraries (Bootstrap, Materialize), Databases (SQL and NoSQL), and more...
+          <p>
+            Interests: Deep Learning, New Media / Interdisciplinary art, the Jazz-Hop Continuum, and more...
+          </p>
+          <p>
+            We're under construction here, please check back soon...
+          </p>
           </TabContainer>
           <TabContainer dir={theme.direction}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel ipsum nec nunc euismod elementum ac ac ligula. Ut sem est, sagittis vitae viverra sed, iaculis sed urna. Phasellus elementum, dui eget bibendum pretium, sapien justo fermentum diam, non pharetra mi leo suscipit quam. In ipsum nisi, mollis id augue sit amet, rutrum varius turpis. Phasellus vel dolor et nunc varius ornare eu ac mi. Ut nec tempus dui. Pellentesque volutpat nisi nulla, sit amet elementum quam consequat et. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras venenatis accumsan arcu, in sollicitudin nulla interdum et. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sit amet nisl in tellus porta faucibus vitae posuere felis. Praesent imperdiet porttitor nibh at tincidunt. In varius neque leo, at posuere nulla dignissim a.
+            We're under construction here, please check back soon...
           </TabContainer>
         </SwipeableViews>
       </div>
@@ -84,4 +112,11 @@ FullWidthTabs.propTypes = {
   theme: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles, { withTheme: true })(FullWidthTabs);
+
+function mapStateToProps(state) {
+  return { px: state.cardReducer.px };
+}
+
+
+const wiredComponent = connect(mapStateToProps, actions)(FullWidthTabs);
+export default withStyles(styles, { withTheme: true })(wiredComponent);

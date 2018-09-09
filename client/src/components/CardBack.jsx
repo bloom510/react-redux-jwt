@@ -21,7 +21,7 @@ class CardBack extends Component {
                 <img src={require('./assets/img/diamond.png')} className='stencil'/>
             </div> */}
 
-            <CardNav className='card-nav' />
+            <CardNav className='card-nav' flipped={this.props.flipped} />
             
             {/* We'd like to add any other content or components at the bottom */}
             {/* For example, a Flipper button */}
