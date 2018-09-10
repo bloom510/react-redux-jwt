@@ -136,7 +136,7 @@ and (orientation: portrait) {
 /* Landscape */
 @media screen 
   and (min-width: 360px) 
-  and (max-height: 700px) 
+  and (max-height: 500px) 
   and (orientation: landscape) { 
 
     .expand {
