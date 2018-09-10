@@ -9,7 +9,7 @@ const cors = require('cors');
 const path = require('path');
 
 //DB setup
-mongoose.connect( process.env.MONGODB_URI || 'mongodb://localhost:auth/auth', { useNewUrlParser: true })
+mongoose.connect( process.env.MONGO_URL || 'mongodb://localhost:auth/auth', { useNewUrlParser: true })
 
 //App setup
 app.use(morgan('combined'));
