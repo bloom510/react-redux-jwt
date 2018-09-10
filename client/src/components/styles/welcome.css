@@ -1,3 +1,4 @@
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: black;
@@ -56,8 +57,8 @@ ul {
 }
 
 .flip-container{
-    left: 12%;
-	position: scroll;
+    position: relative;
+    margin: 0 auto;
 	width: 320px;
     height: 500px;
 }
@@ -72,8 +73,8 @@ ul {
 	backface-visibility: hidden;
     box-shadow: 0 0 3px 0 #F0F8FF;
 	position: absolute;
-	top: 0;
-    left: 14%;
+    top: 0;
+
     /* overflow-y: scroll; */
 }
 
@@ -88,15 +89,14 @@ ul {
 .back {
     transition: all 2s;
     transform: rotateY(180deg);
-
     width: 320px;
     height: 500px;
 }
 
 .expand {
     transition: all 2s;
-    width: 720px;
-    left: -72%;
+    margin-left: -100%;
+    width: 920px;
 }
 
 .bio-img-container {
@@ -113,18 +113,18 @@ ul {
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen
 and (min-width : 360px)
-and (max-width : 640px) {
+and (max-width : 640px) 
+and (orientation: portrait) {
     .front {
-        padding: 5%;
-        z-index: 2;
-        transform: rotateY(0deg);
         width: 320px;
         height: 500px;
     }
     .back {
         width: 320px;
         height: 500px;
-        left: -15%;
+    }
+    .expand {
+        margin-left: 0;
     }
 
 }
@@ -140,18 +140,13 @@ and (max-width : 640px) {
     .expand {
         width: 700px;
         height: 320px;
+        margin-left: -65%;
+        margin-bottom: 5%;
     }
     
-
-    .front {
-        left: 90%;
-    }
-
     .back {
         height: 320px;
-        left: -148%;
+
     }
-
-
 
 }

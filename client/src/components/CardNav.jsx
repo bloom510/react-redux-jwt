@@ -32,7 +32,7 @@ TabContainer.propTypes = {
 
 const styles = theme => ({
   root: {
-    backgroundColor: 'black',
+    // backgroundColor: 'trans',
     // backgroundImage: `url(${require('./assets/img/headshot2.jpg')})`,
     // backgroundRepeat: 'no-repeat',
     // backgroundSize: '100%',

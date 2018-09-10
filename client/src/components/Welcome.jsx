@@ -37,7 +37,6 @@ class Welcome extends Component {
                 this.props.resize(false)
                 this.setState({
                     flipped: false, 
-                    // width: this.props.resize(false).px
                 })
 
             } , timeout)
