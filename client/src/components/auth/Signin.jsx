@@ -4,7 +4,6 @@ import * as actions from '../../actions'
 import { compose } from 'redux';
 import { reduxForm, Field } from 'redux-form';
 
-// import '../styles/Signup.css';
 import theme from '../../mui-styles/theme'
 
 import { MuiThemeProvider } from '@material-ui/core/styles';
