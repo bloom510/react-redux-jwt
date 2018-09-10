@@ -1,3 +1,4 @@
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
@@ -5,16 +6,18 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk';
 
+
 import App from './components/App';
-import Welcome from './components/Welcome';
+import Welcome from './components/card/Welcome';
 import Signup from './components/auth/Signup';
 import Signin from './components/auth/Signin';
 import Signout from './components/auth/Signout';
-import Feature from './components/Feature';
+import Feature from './components/admin/Feature';
 import reducers from './reducers';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
-import './index.css';
+import './styles/css/index.css'
+
 
 import registerServiceWorker from './registerServiceWorker';
 

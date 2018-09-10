@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import './styles/welcome.css'
 
 import CardFront from './CardFront';
 import CardBack from './CardBack';
 import Flipper from './Flipper';
 
 import { connect } from 'react-redux';
-import * as actions from '../actions';
+import * as actions from '../../actions';
 
 class Welcome extends Component {
     constructor() {

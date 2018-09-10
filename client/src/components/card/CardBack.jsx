@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CardNav from './CardNav';
-import './styles/CardBack.css'
+// import './styles/CardBack.css'
 
 
 class CardBack extends Component {

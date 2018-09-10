@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from '../../../../../.cache/typescript/2.9/node_modules/redux';
 import { reducer as formReducer } from 'redux-form';
 import authReducer from './auth';
 import cardReducer from './card'

@@ -34,6 +34,8 @@
     "concurrently": "^4.0.0"
   },
   "scripts": {
+    "sass:watch": "node-sass -w ./client/src/styles/scss -o ./client/src/styles/css",
+    "sass:build": "node-sass ./client/src/styles/scss -o ./client/src/styles/css --source-map true",
     "setup": "yarn install && cd client && yarn install",
     "build": "node internals/scripts/build.js",
     "deploy": "yarn build && yarn checkout",
@@ -43,7 +45,7 @@
     "push": "git push -f heroku deploy:master && yarn run master",
     "master": "git checkout master && yarn run delete",
     "delete": "git branch -D deploy",
-    "start": "concurrently --kill-others-on-fail \"yarn run server\" \"yarn run client\"",
+    "start": "yarn run sass:build && concurrently --kill-others-on-fail \"yarn run server\" \"yarn run client\"",
     "client": "node internals/scripts/client.js",
     "server": "nodemon --watch server server/index.js",
     "server-prod": "node server server/index.js"

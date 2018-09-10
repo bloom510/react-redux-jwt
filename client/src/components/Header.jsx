@@ -8,9 +8,9 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 
-import './styles/HeaderStyle.css';
-import { styles } from './styles/styles'
-import theme from './styles/theme'
+// import './styles/HeaderStyle.css';
+import { styles } from '../styles/styles'
+import theme from '../styles/theme'
 
 import { MuiThemeProvider } from '@material-ui/core/styles';
 

@@ -5,14 +5,14 @@ import Email from '@material-ui/icons/Email';
 import Call from '@material-ui/icons/Call';
 import Textsms from '@material-ui/icons/Textsms';
 
-import { iconStyles, btnStyles } from './styles/styles.js';
+import { iconStyles, btnStyles } from '../../styles/styles.js';
 
 class CardFront extends Component {
     render() {
         return (
             <div className="front">
             <div id='stencil-front' className='stencil-container'>
-                <img src={require('./assets/img/stencil.png')} className='stencil'/>
+                <img src={require('../../assets/img/stencil.png')} className='stencil'/>
             </div>
 
             <strong>

@@ -106,7 +106,7 @@ ul {
     width: 720px;
     height: 150px;
     
-    background: url('../assets/img/headshot2.jpg');
+    background: url('../../assets/img/headshot2.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }

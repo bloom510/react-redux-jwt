@@ -1,11 +1,12 @@
+
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions'
 import { compose } from 'redux';
 import { reduxForm, Field } from 'redux-form';
 
-import '../styles/Signup.css';
-import theme from '../styles/theme'
+// import '../styles/Signup.css';
+import theme from '../../mui-styles/theme'
 
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import { withStyles } from '@material-ui/core/styles';
