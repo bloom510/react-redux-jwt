@@ -8,6 +8,7 @@ export default class Indicator extends Component {
             indicators: [1,2,3],
         };
     }
+
     componentWillReceiveProps() {
         this.setState({focus: this.props.focus})
     }
@@ -18,11 +19,9 @@ export default class Indicator extends Component {
                 { this.state.indicators.map((o,n) => {
                     return ( 
                         <span key={n} 
-                        className=
-                        {
-                            n === this.props.focus ? 
-                            'circle view-focus' : 'circle'
-                        }
+                            className =
+                            {n === this.props.focus ? 
+                                'circle view-focus' : 'circle'}
                         ></span>
                     )
                 }) }

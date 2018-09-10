@@ -115,7 +115,7 @@ class FullWidthTabs extends Component {
             We're under construction here, please check back soon...
           </TabContainer>
         </SwipeableViews>
-        <Indicator tabNum={3} focus={this.state.value} />
+        <Indicator className='indicator' tabNum={3} focus={this.state.value} />
       </div>
     );
   }

@@ -1,7 +1,6 @@
 .circle {
     font-size: 12px;
     transition: font-size .75s;
-
 }
 
 .view-focus {
@@ -18,3 +17,14 @@
     text-align: center;
     width: 100%;
 }
+
+@media screen 
+  and (min-width: 360px) 
+  and (max-height: 600px) 
+  and (orientation: landscape) {
+    .indicator-container {
+        position: absolute;
+        bottom: 10%;
+    }
+}
+
