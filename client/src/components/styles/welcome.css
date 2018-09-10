@@ -31,10 +31,12 @@ ul {
     perspective: 1000px;
     padding: 1%;
     color: #F0F8FF;
+    
 }
 
 .flipped {
-	transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    
 }
 
 .stencil{
@@ -54,9 +56,10 @@ ul {
 }
 
 .flip-container{
-    margin: 0 auto;
+    left: 12%;
+	position: scroll;
 	width: 320px;
-	height: 500px;
+    height: 500px;
 }
 
 .flipper {
@@ -70,7 +73,7 @@ ul {
     box-shadow: 0 0 3px 0 #F0F8FF;
 	position: absolute;
 	top: 0;
-    left: 0;
+    left: 14%;
     /* overflow-y: scroll; */
 }
 
@@ -121,7 +124,7 @@ and (max-width : 640px) {
     .back {
         width: 320px;
         height: 500px;
-        left: -4%;
+        left: -15%;
     }
 
 }
@@ -134,19 +137,19 @@ and (max-width : 640px) {
   and (max-height: 700px) 
   and (orientation: landscape) { 
 
-    .back {
-        left: -77%;
-        /* margin-top: 35%; */
-        /* margin-left: 32%; */
-    }
     .expand {
-        width: 775px;
+        width: 700px;
         height: 320px;
+    }
+    
+
+    .front {
+        left: 90%;
     }
 
     .back {
-        margin-top: 75%;
         height: 320px;
+        left: -148%;
     }
 
 

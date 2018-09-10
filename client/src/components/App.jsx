@@ -6,7 +6,7 @@ import Header from './Header';
 
 export default ({ children }) => {
     return (
-        <div>
+        <div className='app-container'>
             <Header />
             { children }
         </div>
