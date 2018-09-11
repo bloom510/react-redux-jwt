@@ -35,11 +35,11 @@ ReactDOM.render(
             <App>
                 <CssBaseline />
                 <Switch>
-                    <Route exact path='/' exact component={Welcome} />
-                    <Route exact path='/signup' component={Signup} />
-                    <Route exact path='/feature' component={Feature} />
-                    <Route exact path='/signout' component={Signout} />
-                    <Route exact path='/signin' component={Signin} />
+                    <Route exact path='/' component={Welcome} />
+                    <Route path='/signup' component={Signup} />
+                    <Route path='/feature' component={Feature} />
+                    <Route path='/signout' component={Signout} />
+                    <Route path='/signin' component={Signin} />
                 </Switch>
             </App>
         </BrowserRouter>
