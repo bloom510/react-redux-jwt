@@ -32,6 +32,10 @@ if (process.env.NODE_ENV === 'production') {
 	app.use(express.static('client/build'));
 } 
 
+app.get('*', function (request, response){
+    response.sendFile(path.resolve(__dirname, 'public', 'index.html'))
+})
+
 
 //Server setup
 const port = process.env.PORT || 3090;
