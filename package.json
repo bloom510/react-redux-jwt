@@ -48,6 +48,6 @@
     "start": "yarn run sass:build && concurrently --kill-others-on-fail \"yarn run server\" \"yarn run client\"",
     "client": "node internals/scripts/client.js",
     "server": "nodemon --watch server server/index.js",
-    "server-prod": "node server server/index.js"
+    "server-prod": "node server/index.js"
   }
 }

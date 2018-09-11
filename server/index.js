@@ -10,7 +10,9 @@ const path = require('path');
 
 //DB setup
 
-mongoose.connect('mongodb://bloom-admin:9e2458c4d59a762f080c366f9bbf7cdc@dokku-mongo-bloom-admin:27017/bloom-admin', { useNewUrlParser: true })
+mongoose.connect(
+    'mongodb://bloom-admin:9e2458c4d59a762f080c366f9bbf7cdc@dokku-mongo-bloom-admin:27017/bloom-admin', 
+    { useNewUrlParser: true });
 // mongodb://bloom-admin:9e2458c4d59a762f080c366f9bbf7cdc@dokku-mongo-bloom-admin:27017/bloom-admin
 
 //App setup
@@ -28,6 +30,7 @@ app.use(express.static(path.resolve(__dirname, '..', '..', 'public')))
 if (process.env.NODE_ENV === 'production') {
 	app.use(express.static('client/build'));
 } 
+
 //Server setup
 const port = process.env.PORT || 3090;
 const server = http.createServer(app);
@@ -36,9 +39,11 @@ server.listen(port, () => {
 })
 
 if (process.env.NODE_ENV === 'test') {
+    
     app.use(morgan(() => {
         return null;
     }));
+
 } else {
     app.use(morgan('API Request (port ' + port + '): :method :url :status :response-time ms - :res[content-length]'));
 }
