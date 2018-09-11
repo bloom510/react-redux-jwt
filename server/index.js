@@ -39,7 +39,7 @@ server.listen(port, () => {
 })
 
 if (process.env.NODE_ENV === 'test') {
-    
+
     app.use(morgan(() => {
         return null;
     }));

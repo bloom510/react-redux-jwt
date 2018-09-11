@@ -1,7 +1,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk';
@@ -34,11 +34,13 @@ ReactDOM.render(
         <BrowserRouter>
             <App>
                 <CssBaseline />
-                <Route path='/' exact component={Welcome} />
-                <Route path='/signup' component={Signup} />
-                <Route path='/feature' component={Feature} />
-                <Route path='/signout' component={Signout} />
-                <Route path='/signin' component={Signin} />
+                <Switch>
+                    <Route exact path='/' exact component={Welcome} />
+                    <Route exact path='/signup' component={Signup} />
+                    <Route exact path='/feature' component={Feature} />
+                    <Route exact path='/signout' component={Signout} />
+                    <Route exact path='/signin' component={Signin} />
+                </Switch>
             </App>
         </BrowserRouter>
     </Provider>
