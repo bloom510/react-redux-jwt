@@ -8,7 +8,7 @@ const requireSignin = passport.authenticate('local', { session: false })
 
 module.exports = function(app) {
     app.get('/*', function(req, res) {
-        res.sendFile(path.join(__dirname, 'path/to/your/index.html'), function(err) {
+        res.sendFile(path.join(__dirname, '../client/public/index.html'), function(err) {
           if (err) {
             res.status(500).send(err)
           }
