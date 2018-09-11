@@ -7,7 +7,7 @@ const router = require('./router');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const path = require('path');
-var test = 'test';
+
 //DB setup
 mongoose.connect( process.env.MONGO_URL || 'mongodb://localhost:auth/auth', { useNewUrlParser: true })
 
