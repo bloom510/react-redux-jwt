@@ -7,7 +7,7 @@ const router = require('./router');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const path = require('path');
-
+var test = 'test';
 //DB setup
 mongoose.connect( process.env.MONGO_URL || 'mongodb://localhost:auth/auth', { useNewUrlParser: true })
 
@@ -16,8 +16,10 @@ app.use(morgan('combined'));
 app.use(cors());
 app.use(bodyParser.json({ type: '*/*'}));
 router(app);
+
 //init static folder after router has been initialized
 app.use(express.static(path.resolve(__dirname, '..', '..', 'public')))
+
 //after deployment NODE_ENV='production', therefore set express to read from client/build as oppose to public
 if (process.env.NODE_ENV === 'production') {
 	app.use(express.static('client/build'));
