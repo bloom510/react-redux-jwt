@@ -9,7 +9,8 @@ const cors = require('cors');
 const path = require('path');
 
 //DB setup
-mongoose.connect( process.env.MONGO_URL, { useNewUrlParser: true })
+
+mongoose.connect('mongodb://bloom-admin:9e2458c4d59a762f080c366f9bbf7cdc@dokku-mongo-bloom-admin:27017/bloom-admin', { useNewUrlParser: true })
 // mongodb://bloom-admin:9e2458c4d59a762f080c366f9bbf7cdc@dokku-mongo-bloom-admin:27017/bloom-admin
 
 //App setup
