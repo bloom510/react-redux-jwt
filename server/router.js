@@ -7,13 +7,6 @@ const requireAuth = passport.authenticate('jwt', { session: false })
 const requireSignin = passport.authenticate('local', { session: false })
 
 module.exports = function(app) {
-    app.get('/*', function(req, res) {
-        res.sendFile(path.join(__dirname, '../client/public/index.html'), function(err) {
-          if (err) {
-            res.status(500).send(err)
-          }
-        })
-      })
     app.get('/api', requireAuth, function(req, res, next) {
         res.send( { hi: 'there' });
     });
