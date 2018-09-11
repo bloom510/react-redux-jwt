@@ -42,7 +42,7 @@
     "checkout": "git checkout -b deploy && yarn run add",
     "add": "git add -f client/build && yarn run commit",
     "commit": "git commit -m \"deploy\" && yarn run push",
-    "push": "git push -f heroku deploy:master && yarn run master",
+    "push": "git push -f dokku deploy:master && yarn run master",
     "master": "git checkout master && yarn run delete",
     "delete": "git branch -D deploy",
     "start": "yarn run sass:build && concurrently --kill-others-on-fail \"yarn run server\" \"yarn run client\"",
