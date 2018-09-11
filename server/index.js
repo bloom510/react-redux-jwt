@@ -12,7 +12,16 @@ const path = require('path');
 mongoose.connect( process.env.MONGO_URL || 'mongodb://localhost:auth/auth', { useNewUrlParser: true })
 
 //App setup
-app.use(morgan('combined'));
+// app.use(morgan('combined'));
+
+if (process.env.NODE_ENV === 'test') {
+    app.use(morgan(() => {
+        return null;
+    }));
+} else {
+    app.use(morgan('API Request (port ' + port + '): :method :url :status :response-time ms - :res[content-length]'));
+}
+
 app.use(cors());
 app.use(bodyParser.json({ type: '*/*'}));
 router(app);
