@@ -32,11 +32,11 @@ class Server {
         if (process.env.NODE_ENV === 'test') 
             app.use(morgan(() => null));
         else 
-            app.use(morgan('API Request (port ' + port + '): :method :url :status :response-time ms - :res[content-length]'));   
+            app.use(morgan('API Request (port ' + this.port + '): :method :url :status :response-time ms - :res[content-length]'));   
     }
     run() {
-        server.listen(port, () => {
-            console.log(`Server listening on port ${port}`)
+        this.server.listen(this.port, () => {
+            console.log(`Server listening on port ${this.port}`)
         })
     }
 }
