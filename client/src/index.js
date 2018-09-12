@@ -13,11 +13,11 @@ import Signup from './components/auth/Signup';
 import Signin from './components/auth/Signin';
 import Signout from './components/auth/Signout';
 import Feature from './components/admin/Feature';
+import NotFound from './components/NotFound'
 import reducers from './reducers';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import './styles/css/index.css'
-
 
 import registerServiceWorker from './registerServiceWorker';
 
@@ -40,6 +40,7 @@ ReactDOM.render(
                     <Route path='/feature' component={Feature} />
                     <Route path='/signout' component={Signout} />
                     <Route path='/signin' component={Signin} />
+                    <Route path='*' restricted={false} component={NotFound} />
                 </Switch>
             </App>
         </BrowserRouter>
