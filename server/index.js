@@ -27,6 +27,7 @@ class Server {
         app.use(bodyParser.json({ type: '*/*'}));
         app.use(express.static(path.resolve(__dirname, '..', '..', 'public')))
         router(app);
+        
         if (process.env.NODE_ENV === 'production') 
             app.use(express.static('client/build'));
         if (process.env.NODE_ENV === 'test') 

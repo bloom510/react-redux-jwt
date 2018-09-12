@@ -12,5 +12,9 @@ module.exports = function(app) {
     });
     app.post('/api/signin', requireSignin, Authentication.signin)
     app.post('/api/signup', Authentication.signup)
+    app.get('*', function (request, response){
+        response.sendFile(path.resolve(__dirname, '../client/public', 'index.html'))
+    })
+    
    
 }
