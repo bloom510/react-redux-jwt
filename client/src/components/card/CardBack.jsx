@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CardNav from './CardNav';
+import CardBackContent from './CardBackContent';
 // import './styles/CardBack.css'
 
 
@@ -7,21 +7,9 @@ class CardBack extends Component {
     render() {
         return (
             <div className="back">
-            {/* <p>
-                Need a full-stack developer to engineer scalable solutions for your business or get your next site up and running?
-                Drop me a line (see reverse for contact info).
-            </p>
-            
-            <p>
-                We are currently under construction. 
-                Check back later for Services, Portfolio, and Bio.
-            </p>
 
-            <div id='stencil-front' className='stencil-container'>
-                <img src={require('./assets/img/diamond.png')} className='stencil'/>
-            </div> */}
-
-            <CardNav 
+            <CardBackContent 
+                windowDims={this.props.windowDims}
                 className='card-nav' 
                 flipped={this.props.flipped} 
                 />

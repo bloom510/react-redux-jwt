@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography';
 
 import Indicator from './Indicator';
 import Bio from './Bio'
+import Portfolio from './Portfolio'
 
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
@@ -113,8 +114,7 @@ class FullWidthTabs extends Component {
           </p>
           </TabContainer>
           <TabContainer dir={theme.direction}>
-          <h2>Portfolio</h2>
-            We're under construction here, please check back soon...
+            <Portfolio windowDims={this.props.windowDims}/>
           </TabContainer>
         </SwipeableViews>
         <Indicator className='indicator' tabNum={3} focus={this.state.value} />

@@ -12,7 +12,24 @@ class Welcome extends Component {
         super();
         this.state = {
             flipped: false,
+            windowDims: { width: window.innerWidth, height: window.innerHeight }
         }
+    }
+
+    componentDidMount() {
+        window.addEventListener('resize', () => {
+            this.handleResize()
+        })
+    }
+
+    handleResize(){
+        const update = { 
+            width: window.innerWidth, 
+            height: window.innerHeight 
+        }
+        this.setState({ 
+            windowDims: update
+        })
     }
 
     handleFlip(){
@@ -22,35 +39,25 @@ class Welcome extends Component {
         if(!this.state.flipped) {
             flipper.classList.add('flipped');
             back.classList.add('expand');
+
             this.setState({
                 flipped: true, 
-                // width: this.props.resize(true).px
             })
 
         } else {
-            const timeout = window.innerWidth <= 480 ? 0 : 1500;
-            console.log('timeout', timeout)
+            
+            const timeoutLength = window.innerWidth <= 480 ? 0 : 1500;
             back.classList.remove('expand');
+            
             setTimeout(() => {
                 flipper.classList.remove('flipped');
                 this.props.resize(false)
                 this.setState({
                     flipped: false, 
                 })
-
-            } , timeout)
+            }, timeoutLength)
         }
-        console.log(this.state)
-
-    }
-    
-    reveal(){
-        return (
-            <div style={{marginLeft: '50%'}}>
-                <small>I get rendered when the card flips</small>
-            </div>
-        )   
-    }
+}
 
     render() {
         return (
@@ -62,7 +69,7 @@ class Welcome extends Component {
                             See more
                         </Flipper>
                     </CardFront>
-                    <CardBack flipped={this.state.flipped}>
+                    <CardBack windowDims={this.state.windowDims} flipped={this.state.flipped}>
                         <Flipper onClick={() => this.handleFlip()}>
                             Back
                         </ Flipper>
