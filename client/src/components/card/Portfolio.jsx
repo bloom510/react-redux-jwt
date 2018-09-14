@@ -15,8 +15,8 @@ const styles = theme => ({
       display: 'flex',
       flexWrap: 'wrap',
       justifyContent: 'space-around',
-
-      // marginTop: '-3%'
+      width: '100%',
+      margin: '0 auto',
     },
     gridList: {
         width: '100%',
@@ -69,19 +69,19 @@ class TitlebarGridList extends Component {
 
   render() {
     const { classes } = this.props;
-    // console.log(this.props.windowDims)
     return (
     <div>
     <h2>Portfolio</h2>
-    <p>
+    
       Currently coding dynamic window resize handlers for this section.
       Below are placeholders for the mockup's sake. Thanks for bearing with us here, please come back soon! 
-    </p>
-      <div className={classes.root}>
+    
+      <div 
+       className={classes.root}>
         <GridList 
-          // cellHeight={this.props.windowDims.x / this.TWO_PHI}
+         cellHeight={this.props.windowDims.width / this.TWO_PHI}
          className={classes.gridList}>
-          <GridListTile key="Subheader" cols={2} style={{ height: '100%', marginTop: '-6%' }}>
+          <GridListTile key="Subheader" cols={2} style={{ height: '100%', marginTop: '-4%' }}>
             <ListSubheader component="div">December</ListSubheader>
           </GridListTile>
           {tileData.map(tile => (

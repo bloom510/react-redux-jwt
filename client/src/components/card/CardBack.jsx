@@ -9,6 +9,7 @@ class CardBack extends Component {
             <div className="back">
 
             <CardBackContent 
+                flipBtn={this.props.flipBtn}
                 windowDims={this.props.windowDims}
                 className='card-nav' 
                 flipped={this.props.flipped} 

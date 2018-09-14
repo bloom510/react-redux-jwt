@@ -15,7 +15,9 @@ export default class Indicator extends Component {
 
     render() {
         return (
-            <div className='indicator-container'>
+            <div className='indicator-container'
+               
+            >
                 { this.state.indicators.map((o,n) => {
                     return ( 
                         <span key={n} 
@@ -25,6 +27,7 @@ export default class Indicator extends Component {
                         ></span>
                     )
                 }) }
+                {this.props.navComponents('Back')}
             </div>
         );
     }

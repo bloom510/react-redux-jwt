@@ -69,7 +69,6 @@ ul {
 	position: absolute;
     top: 0;
 
-    /* overflow-y: scroll; */
 }
 .flip-container{
     position: relative;
@@ -91,6 +90,8 @@ ul {
     transform: rotateY(180deg);
     width: 320px;
     height: 500px;
+    overflow-y: hidden;
+
 }
 
 .expand {
@@ -124,10 +125,6 @@ and (orientation: portrait) {
         width: 320px;
         height: 500px;
     }
-    .expand {
-        margin-left: 0;
-
-    }
 
 }
 
@@ -141,7 +138,6 @@ and (orientation: portrait) {
 
     .expand {
         width: 700px;
-        height: 320px;
         margin-left: -65%;
         margin-bottom: 5%;
     }
@@ -150,5 +146,6 @@ and (orientation: portrait) {
         height: 320px;
 
     }
+
 
 }

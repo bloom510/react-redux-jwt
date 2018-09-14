@@ -62,7 +62,7 @@ class CardFront extends Component {
             <span>// San Francisco Bay Area</span>
             
             {/* Any other components or content, like Flipper button */}
-            { this.props.children }
+            { this.props.flipBtn('See more') }
 
         </div>
         );

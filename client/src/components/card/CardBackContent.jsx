@@ -21,7 +21,8 @@ function TabContainer({ children, dir }) {
       style={{ 
         color: 'white', 
         padding: 8 * 3,  
-        height: '420px',
+        height: 'auto',
+
         }}>
       {children}
     </Typography>
@@ -40,8 +41,9 @@ const styles = theme => ({
     // backgroundRepeat: 'no-repeat',
     // backgroundSize: '100%',
     // backgroundPosition: '50%',
+    overflowY: 'scroll',
     width: '100%',
-    height: '500px',
+    height: '100%',
   },
   tabsIndicator: {
     background: 'transparent',
@@ -70,6 +72,7 @@ class FullWidthTabs extends Component {
     const { classes, theme } = this.props;
     return (
       <div className={classes.root}>
+
         <AppBar 
          position="static" 
          color="default"
@@ -95,7 +98,6 @@ class FullWidthTabs extends Component {
           onChangeIndex={this.handleChangeIndex}
         >
           <TabContainer dir={theme.direction}>
-          {/* <div className='bio-img-container'></div>  */}
             <Bio />
             <p>
 
@@ -117,7 +119,9 @@ class FullWidthTabs extends Component {
             <Portfolio windowDims={this.props.windowDims}/>
           </TabContainer>
         </SwipeableViews>
-        <Indicator className='indicator' tabNum={3} focus={this.state.value} />
+        
+        <Indicator navComponents={this.props.flipBtn} className='indicator' tabNum={3} focus={this.state.value} />
+        
       </div>
     );
   }

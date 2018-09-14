@@ -20,6 +20,18 @@ class Welcome extends Component {
         window.addEventListener('resize', () => {
             this.handleResize()
         })
+
+        //TODO: Achieve the following iteratively
+        const flipBtnOne = document.querySelectorAll('.flip-btn')[0]
+        const flipBtnTwo = document.querySelectorAll('.flip-btn')[1]
+        
+        flipBtnOne.addEventListener('click', () => {
+            this.handleFlip()
+        })
+
+        flipBtnTwo.addEventListener('click', () => {
+            this.handleFlip()
+        })
     }
 
     handleResize(){
@@ -59,21 +71,19 @@ class Welcome extends Component {
         }
 }
 
+renderFlipBtn(text) {
+    return( 
+        <Flipper>{text}</Flipper>
+    )
+}
+
     render() {
         return (
             <div>
                 <div className="flip-container">
                 <div className="flipper">
-                    <CardFront>
-                        <Flipper onClick={() => this.handleFlip()}>
-                            See more
-                        </Flipper>
-                    </CardFront>
-                    <CardBack windowDims={this.state.windowDims} flipped={this.state.flipped}>
-                        <Flipper onClick={() => this.handleFlip()}>
-                            Back
-                        </ Flipper>
-                    </CardBack>
+                    <CardFront flipBtn={this.renderFlipBtn} />
+                    <CardBack windowDims={this.state.windowDims} flipped={this.state.flipped} flipBtn={this.renderFlipBtn} />
                 </div>
             </div>
             {/* You can conditionally render components based on card direction */}

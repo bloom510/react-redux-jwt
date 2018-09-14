@@ -13,9 +13,27 @@
     }
     
     .indicator-container {
-        bottom: 2%;
-        position: absolute;
+        background-attachment: scroll;
+        transition: all 2s;
+        bottom: 0;
+        height: 25px;
+        position: fixed;
         text-align: center;
         width: 100%;
+        background: black;
     }
-    
+
+
+/* Landscape */
+@media screen 
+and (min-width: 360px) 
+and (max-height: 500px) 
+and (orientation: landscape) { 
+
+  .indicator-container {
+      bottom: 0;
+      height: 20px;
+  }
+
+
+}
