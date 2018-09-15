@@ -17,6 +17,8 @@ const styles = theme => ({
       justifyContent: 'space-around',
       width: '100%',
       margin: '0 auto',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover'
     },
     gridList: {
         width: '100%',
@@ -64,25 +66,31 @@ const styles = theme => ({
 class TitlebarGridList extends Component {
   constructor() {
     super();
-    this.TWO_PHI = 2.5*(1 + Math.sqrt(5)) / 2;
+    this.PHI = (1 + Math.sqrt(5)) / 2;
   }
 
   render() {
     const { classes } = this.props;
     return (
     <div>
-    <h2>Portfolio</h2>
-    
-      Currently coding dynamic window resize handlers for this section.
-      Below are placeholders for the mockup's sake. Thanks for bearing with us here, please come back soon! 
-    
+      <div id='search-container'>
+      <div style={{marginBottom: this.props.windowDims.width >= 720 ? '-3%' : '-14%'}}>
+        <h2>Portfolio</h2> 
+        <input type='text' style={{borderRadius:'5px', height:'25px'}} placeholder={`Search tags (e.g 'React')`}></input>
+          <p>
+          Below are placeholders for the mockup's sake. Thanks for bearing with us here, please come back soon!        
+          </p>
+        </div>
+      </div>
       <div 
        className={classes.root}>
         <GridList 
-         cellHeight={this.props.windowDims.width / this.TWO_PHI}
+          cellHeight={this.props.windowDims.height / 5*this.PHI}
+         cols={this.props.windowDims.width >= 720 ? 2 : 1}
          className={classes.gridList}>
           <GridListTile key="Subheader" cols={2} style={{ height: '100%', marginTop: '-4%' }}>
             <ListSubheader component="div">December</ListSubheader>
+            {/* Move portfolio header and search bar here */}
           </GridListTile>
           {tileData.map(tile => (
             <GridListTile key={Math.random()*999}>

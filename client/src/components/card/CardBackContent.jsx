@@ -21,7 +21,7 @@ function TabContainer({ children, dir }) {
       style={{ 
         color: 'white', 
         padding: 8 * 3,  
-        height: 'auto',
+        height: '820px',
 
         }}>
       {children}
