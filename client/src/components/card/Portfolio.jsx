@@ -60,6 +60,11 @@ const styles = theme => ({
             title: 'Placeholder',
             author: 'author',
         },
+        { 
+          img: image,
+          title: 'Placeholder',
+          author: 'author',
+      },
     ];
 
 
@@ -71,30 +76,30 @@ class TitlebarGridList extends Component {
 
   render() {
     const { classes } = this.props;
+    console.log('resize', this.props.windowDims)
     return (
-    <div>
-      <div id='search-container'>
-      <div style={{marginBottom: this.props.windowDims.width >= 720 ? '-3%' : '-14%'}}>
-        <h2>Portfolio</h2> 
-        <input type='text' style={{borderRadius:'5px', height:'25px'}} placeholder={`Search tags (e.g 'React')`}></input>
-          <p>
-          Below are placeholders for the mockup's sake. Thanks for bearing with us here, please come back soon!        
-          </p>
-        </div>
-      </div>
+      
       <div 
        className={classes.root}>
         <GridList 
-          cellHeight={this.props.windowDims.height / 5*this.PHI}
+         cellHeight={this.props.windowDims.width >= 823 
+          ? this.props.windowDims.width / 7*this.PHI
+          : this.props.windowDims.width / 5*this.PHI
+        }
          cols={this.props.windowDims.width >= 720 ? 2 : 1}
          className={classes.gridList}>
-          <GridListTile key="Subheader" cols={2} style={{ height: '100%', marginTop: '-4%' }}>
-            <ListSubheader component="div">December</ListSubheader>
-            {/* Move portfolio header and search bar here */}
+          <GridListTile key="Subheader" cols={1}>
+            <div id='search-container' style={{width: 'inherit', marginBottom: this.props.windowDims.width >= 720 ? '-18%' : '10%' }}>
+              <h2>Portfolio</h2> 
+              <input type='text' style={{borderRadius:'5px', height:'25px'}} placeholder={`Search tags (e.g 'React')`}></input>
+                <p>
+                Below are placeholders for the mockup's sake. Thanks for bearing with us here, please come back soon!        
+                </p>
+              </div>
           </GridListTile>
           {tileData.map(tile => (
             <GridListTile key={Math.random()*999}>
-              <img src={tile.img} alt={tile.title} />
+              <img src={tile.img} alt={tile.title} style={{width: '100%'}} />
               <GridListTileBar
                 title={tile.title}
                 subtitle={<span>by: {tile.author}</span>}
@@ -108,7 +113,7 @@ class TitlebarGridList extends Component {
           ))}
         </GridList>
       </div>
-    </div>
+
     );
   }
 }

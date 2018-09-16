@@ -21,7 +21,7 @@ function TabContainer({ children, dir }) {
       style={{ 
         color: 'white', 
         padding: 8 * 3,  
-        height: '820px',
+        height: '920px',
 
         }}>
       {children}
@@ -99,12 +99,8 @@ class FullWidthTabs extends Component {
         >
           <TabContainer dir={theme.direction}>
             <Bio />
-            <p>
 
-            We're under construction here, please check back soon...
-            
-            
-            </p>
+       
 
            
 

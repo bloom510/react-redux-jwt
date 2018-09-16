@@ -3,7 +3,9 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: black;
 }
-
+a:visited {
+    color: white;
+}
 .action {
     display: inline-block;
     position: relative;
